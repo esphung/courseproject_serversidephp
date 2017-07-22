@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/" />
+<title>signin</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">signin</td></tr>
+</thead><tbody>
+<!--//check invalid credentials-->
+<tr>
+	<td>open</td>
+	<td>http://corsair.cs.iupui.edu:20291/courseproject/usermodule/signin/signin.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>122$%^&amp;*hu</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=inputPassword</td>
+	<td>3546576%^&amp;*hbjndsa</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1</td>
+	<td>exact:Unable to find 122$%^&amp;*hu</td>
+</tr>
+<!--// valid login-->
+<tr>
+	<td>open</td>
+	<td>/~homeuser/usermodule/signin/signin.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>username</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=inputPassword</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1</td>
+	<td>Welcome Back, username</td>
+</tr>
+</tbody></table>
+</body>
+</html>

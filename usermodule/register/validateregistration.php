@@ -5,17 +5,7 @@ DATE:     	2017.06.28
 PURPOSE:  	process user information + validation register
  -->
 <?php
-
-// initialize empty vars
-$email = "";
-$confirmEmail = "";
-$username = "";
-$password = "";
-$confirmPassword = "";
-$firstName =            "";
-$lastName =             "";
-
-
+/*//*/
 // sanitize values
 function test_input($data) {
   $data = trim($data);
@@ -28,29 +18,29 @@ function test_input($data) {
 // validate email
 function validateEmail($value='email'){
     if (!filter_var($value, FILTER_VALIDATE_EMAIL) === false) {
-        echo("$value is a valid email address\n");
+        //echo("$value is a valid email address\n");
         return true;
     } else {
-        echo "Invalid email format\n";
+        //echo "Invalid email format\n";
         return false;
     }// end email check
 }
 
-    // test vars
-    /*$email = "hello@gmail.com";
-    $confirmEmail = "hello@gmail.com";
-    $password = "12345";
-    $confirmPassword = "12345";
-    $firstName =            'niff';
-    $lastName =             'tons';
-    */
+// test vars
+/*$email = "hello@gmail.com";
+$confirmEmail = "hello@gmail.com";
+$password = "12345";
+$confirmPassword = "12345";
+$firstName =            'niff';
+$lastName =             'tons';
+*/
 
 
 
 
 /* function called when submit button tapped */
 if(isset($_POST['submit'])) {
-/* store user input as variables */
+    /* store user input as variables */
 
     $firstName =                ($_POST['inputFirstName']);
     $lastName =                 ($_POST['inputLastName']);
@@ -111,7 +101,7 @@ if(isset($_POST['submit'])) {
     } else {
         // if passwords dont match
         //echo $password."\n";
-        echo "passwords don't match\n";
+        //echo "passwords don't match\n";
         //echo $confirmPassword."\n";
     }// end password check
 
@@ -140,7 +130,20 @@ if(isset($_POST['submit'])) {
         // issa valid name
     }// end last name check
 
+    // set user object properties
+    $userObj->firstName = ($_SESSION["firstName"]);
+    $userObj->lastName = ($_SESSION["lastName"]);
+    $userObj->username = ($_SESSION["username"]);
+    $userObj->email = ($_SESSION["email"]);
+    $userObj->password = ($_SESSION["password"]);
 
+    // save as session user
+    $_SESSION['user'] = $userObj;
+
+
+    // make user object into json string
+    $myJSON = json_encode($_SESSION['user']);
+    //echo($myJSON);
 
 
 };// end submit
@@ -151,25 +154,65 @@ if(isset($_POST['submit'])) {
 
 
 // custom class
-include "userclass.php";
+//include "../userclass.php";
 
 // create user object
-$userObj = new User();
+//$userObj = new User();
 
 // set user object properties
-$userObj->setFirstName($_SESSION["firstName"]);
+/*$userObj->setFirstName($_SESSION["firstName"]);
 $userObj->setlastName($_SESSION["lastName"]);
 $userObj->setUsername($_SESSION["username"]);
 $userObj->setEmail($_SESSION["email"]);
 $userObj->setPassword($_SESSION["password"]);
+*/
 
-// save as session user
-$_SESSION['user'] = $userObj;
-
-
-// make user object into json string
-$myJSON = json_encode($userObj);
-echo($myJSON);
 
 /* end user input request processing function */
 ?>
+
+
+
+<?php
+/*.Completed Registration Page */
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+
+<?php
+//css and javascript
+include '../assets.php';
+?>
+<title>
+        Display
+</title>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Registration Complete</h1>
+            <h3 id='subtitle'>Welcome to Pill Finder, <?=$_SESSION["firstName"]?></h3>
+            <label id='labelinfo'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</label>
+
+<!--            <div class='container'>
+              <table class="table table-bordered table-responsive">
+                <thead>
+                  <tr>
+                    <th>ID Number</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div> -->
+        </div>
+    </body>
+</html>
