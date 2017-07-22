@@ -14,7 +14,7 @@
 <!--//check invalid credentials-->
 <tr>
 	<td>open</td>
-	<td>http://corsair.cs.iupui.edu:20291/courseproject/usermodule/signin/signin.php</td>
+	<td>/~homeuser/usermodule/signin/signin.php</td>
 	<td></td>
 </tr>
 <tr>
