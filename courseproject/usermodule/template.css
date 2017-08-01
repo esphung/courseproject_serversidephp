@@ -1,0 +1,127 @@
+/*
+FILE:			css/index.css
+AUTHOR:			ERIC PHUNG
+DATE:			2017.06.27
+ASSIGNMENT:		LAB 
+PURPOSE:		Custom style sheet as template for usermodule
+*/
+
+/*html { 
+  background: url(../images/pillbackgroundimg.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center top;
+}*/
+
+
+/*h3 {color: #218C8D;}teal*/
+h2 {color: #78CABB;}/*teal from bg image dropped*/
+
+
+html,body {
+  font-family: Permanent Marker;
+  font-size:24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  /*line-height: 26.4px;*/
+
+
+  /*.normialize margin */
+  margin: .5em;
+
+  color: #473E3F;
+}
+
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: rgb(71, 62, 63);
+  box-shadow: 0 1px 1px rgb(71, 62, 63) inset, 0 0 8px rgb(71, 62, 63);
+  /*outline: 0 none;*/
+}
+
+
+div.bg {
+      /* The image used */
+    background: url(../pillbackgroundimg.png);
+
+
+
+/* Full height */
+height: 100%; 
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat center center fixed; 
+-webkit-background-size:  cover;
+-moz-background-size:  cover;
+-o-background-size:  cover;
+background-size: cover;
+background-position: center top;
+
+}
+
+
+
+/* unvisited link */
+a {
+  color: #E67B5E;
+  /*color: #473E3F; dark gray*/
+}
+
+
+
+/* buttons */
+
+.btn.btn-primary {
+  font-family: Permanent Marker;
+  font-size:32px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  /*color: white;*/
+  color: #E67B5E;
+  background-color: #473E3F;
+  border: none;
+  
+}
+
+/*.btn.btn-primary:hover {
+    background-color: #218C8D;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+*/
+/*body {color: #473E3F;} darkgray*/
+
+
+
+
+
+
+.help-block {color: #EF7126;/*salmon*/}
+
+

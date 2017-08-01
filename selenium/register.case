@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://localhost/" />
+<link rel="selenium.base" href="http://corsair.cs.iupui.edu:20291/" />
 <title>register</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
 <!--// verify css and js validated fields-->
 <tr>
 	<td>open</td>
-	<td>/~homeuser/usermodule/register/register.php</td>
+	<td>courseproject/usermodule/register</td>
 	<td></td>
 </tr>
 <tr>
@@ -73,11 +73,6 @@
 	<td>id=inputPassword</td>
 	<td>password1234</td>
 </tr>
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>//div[5]/div/ul/li</td>
-	<td></td>
-</tr>
 <!--// verify email field(s)-->
 <tr>
 	<td>type</td>
@@ -95,9 +90,14 @@
 	<td></td>
 </tr>
 <tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
 	<td>verifyText</td>
-	<td>//div[4]/div/ul/li</td>
-	<td>Whoops, these don't match</td>
+	<td>//form[@id='form']/div[4]/div/ul/li</td>
+	<td>..Whoops, these don't match</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -109,15 +109,10 @@
 	<td>name=submit</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>//div[4]/div/ul/li</td>
-	<td>Whoops, these don't match</td>
-</tr>
 <!--// valid login-->
 <tr>
 	<td>open</td>
-	<td>/~homeuser/usermodule/register/register.php</td>
+	<td>courseproject/usermodule/register</td>
 	<td></td>
 </tr>
 <tr>
@@ -133,12 +128,12 @@
 <tr>
 	<td>type</td>
 	<td>id=inputEmail</td>
-	<td>fbar@pillfinder.com</td>
+	<td>username@pillfinder.com</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=inputConfirmEmail</td>
-	<td>fbar@pillfinder.com</td>
+	<td>username@pillfinder.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -159,11 +154,6 @@
 	<td>clickAndWait</td>
 	<td>name=submit</td>
 	<td></td>
-</tr>
-<tr>
-	<td>verifyText</td>
-	<td>css=h1</td>
-	<td>Registration Complete</td>
 </tr>
 </tbody></table>
 </body>

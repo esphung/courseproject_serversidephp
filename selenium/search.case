@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://localhost/" />
+<link rel="selenium.base" href="http://corsair.cs.iupui.edu:20291/" />
 <title>search</title>
 </head>
 <body>
@@ -11,15 +11,37 @@
 <thead>
 <tr><td rowspan="1" colspan="3">search</td></tr>
 </thead><tbody>
+<!--// valid login-->
 <tr>
 	<td>open</td>
-	<td>/~homeuser/usermodule/search/search.php</td>
+	<td>courseproject/usermodule/signin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email</td>
+	<td>username@pillfinder.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=inputPassword</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=submit</td>
+	<td></td>
+</tr>
+<!--search pills-->
+<tr>
+	<td>open</td>
+	<td>courseproject/usermodule/search</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=imprint</td>
-	<td>abc123</td>
+	<td>30</td>
 </tr>
 <tr>
 	<td>select</td>
@@ -35,11 +57,6 @@
 	<td>clickAndWait</td>
 	<td>name=submit</td>
 	<td></td>
-</tr>
-<tr>
-	<td>verifyText</td>
-	<td>css=body</td>
-	<td>Array ( [imprint] =&gt; abc123 [color] =&gt; ORANGE [shape] =&gt; ROUND )</td>
 </tr>
 </tbody></table>
 </body>

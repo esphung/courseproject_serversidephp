@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://localhost/" />
+<link rel="selenium.base" href="http://corsair.cs.iupui.edu:20291/" />
 <title>signin</title>
 </head>
 <body>
@@ -14,13 +14,13 @@
 <!--//check invalid credentials-->
 <tr>
 	<td>open</td>
-	<td>/~homeuser/usermodule/signin/signin.php</td>
+	<td>courseproject/usermodule/signin</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=username</td>
-	<td>122$%^&amp;*hu</td>
+	<td>id=email</td>
+	<td>122$%^&amp;*hu@gmail.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -32,21 +32,16 @@
 	<td>name=submit</td>
 	<td></td>
 </tr>
-<tr>
-	<td>verifyText</td>
-	<td>css=h1</td>
-	<td>exact:Unable to find 122$%^&amp;*hu</td>
-</tr>
 <!--// valid login-->
 <tr>
 	<td>open</td>
-	<td>/~homeuser/usermodule/signin/signin.php</td>
+	<td>courseproject/usermodule/signin</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=username</td>
-	<td>username</td>
+	<td>id=email</td>
+	<td>username@pillfinder.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -59,9 +54,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>css=h1</td>
-	<td>Welcome Back, username</td>
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td>Logout</td>
 </tr>
 </tbody></table>
 </body>
