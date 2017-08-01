@@ -36,7 +36,7 @@ html,body {
 }
 
 
-textarea:focus,
+/*textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="datetime"]:focus,
@@ -54,8 +54,8 @@ input[type="color"]:focus,
 .uneditable-input:focus {   
   border-color: rgb(71, 62, 63);
   box-shadow: 0 1px 1px rgb(71, 62, 63) inset, 0 0 8px rgb(71, 62, 63);
-  /*outline: 0 none;*/
-}
+  outline: 0 none;
+}*/
 
 
 div.bg {

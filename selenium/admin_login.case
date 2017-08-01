@@ -4,49 +4,32 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://corsair.cs.iupui.edu:20291/" />
-<title>signin</title>
+<title>admin_login</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">signin</td></tr>
+<tr><td rowspan="1" colspan="3">admin_login</td></tr>
 </thead><tbody>
-<!--//check invalid credentials-->
 <tr>
 	<td>open</td>
-	<td>courseproject/usermodule/signin</td>
+	<td>/courseproject/</td>
 	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=email</td>
-	<td>122$%^&amp;*hu@gmail.com</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=inputPassword</td>
-	<td>3546576%^&amp;*hbjndsa</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>name=submit</td>
-	<td></td>
-</tr>
-<!--// valid login-->
-<tr>
-	<td>open</td>
-	<td>courseproject/usermodule/signin</td>
+	<td>link=Administration</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=email</td>
-	<td>username@pillfinder.com</td>
+	<td>esphung@gmail.com</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=inputPassword</td>
-	<td>password</td>
+	<td>stuff1234</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -55,13 +38,8 @@
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>id=subtitle</td>
-	<td>Welcome, Foo Bar</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Logout</td>
-	<td>Logout</td>
+	<td>css=h2</td>
+	<td>Admin Page</td>
 </tr>
 </tbody></table>
 </body>

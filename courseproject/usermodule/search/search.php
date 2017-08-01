@@ -2,45 +2,54 @@
 FILE:     search.php
 AUTHOR:   eric phung
 DATE:     2017.06.28
-PURPOSE:  	search for a pill
+PURPOSE:    search for a pill
  -->
-
-
-
-
-
 <?php
 session_start();
-
-include '../../classes.php';
+// included files
 include '../../functions.php';
-include '../assets.php';
+include '../../classes.php';
+
+
+if (isset($_SESSION['login_user'])) {
+  if ($_SESSION['isAdmin'] == true) {
+    //echo "Admin Logged In!";
+    //$_SESSION['isAdmin'] = true;
+    // redirect to admin page
+    header("Location: ../../servermodule/admin");
+  } else {
+  //echo "you are logged in\n<br>";
+  //echo $_SESSION['login_user'];
+
+
+    $user = new User();
+    $user->getMyRecord($_SESSION['login_user']);
+
+  }
+
+
+
+} else {
+// redirect to login page
+header("Location: ../signin");
+}
+
+
+?>
+
+<?php
+include '../../htmlTopPage.html';
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-<meta charset='utf-8'>
-    <title>Pill Search</title>
+
+<title>Search | Pill Identi🔥</title>
 </head>
 <body id='body'>
 <div class='container'>
 <h2 id='title'>Search Results</h2>
-<?php
-/*
-// sanitize values
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = strip_tags($data);
-  $data = htmlspecialchars($data);
-  return $data;
-} // end test_input() function def
-*/
-// Start the session
-//session_start();
 
+<?php
 /* function called when submit button tapped */
 if(isset($_POST['submit'])) {
 
@@ -158,7 +167,7 @@ print "<tbody>";
 // iterate thru pill results for table displays
 for ($i = 0; $i < count($_SESSION['search']); $i++) {
   print "<tr>";
-  print "<td><img class='img-thumbnail' src='".$_SESSION['search'][$i]->imageUrl."' alt='Mountain View'></td>";
+  print "<td><img class='img-thumbnail' src='".$_SESSION['search'][$i]->imageUrl."' alt='".$_SESSION['search'][$i]->name."'></td>";
   // print "<td>".$_SESSION['search'][$i]->pill_id."</td>";
   print "<td>".$_SESSION['search'][$i]->name."</td>";
   // print "<td>".$_SESSION['search'][$i]->labeler."</td>";
@@ -186,8 +195,43 @@ print "</table>";
 ?>
 
 
+
+
+
 <?php
 include '../menu.php';
+?>
+
+<?php
+$servername = "localhost";
+$username = "esphung";
+$password = "esphung";
+$dbname = "esphung_db";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+for ($i = 0; $i < count($pillArray); $i++) {
+  $sql = "INSERT INTO SEARCHED (user_id, pill_id, pill_name)
+  VALUES (
+    '".$user->id_num."',
+    '".$pillArray[$i]->pill_id."',
+    '".$pillArray[$i]->name."')";
+
+  if ($conn->query($sql) === TRUE) {
+      //echo "New record created successfully";
+  } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
+
+
+
+$conn->close();
 ?>
 
 </div>

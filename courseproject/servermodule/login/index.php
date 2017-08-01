@@ -10,6 +10,8 @@ if(isset($_SESSION['login_user'])){
 header("location: ../display");
 }
 ?>
+</head>
+<body id='body'>
 
 
 
@@ -20,7 +22,7 @@ header("location: ../display");
 <h1>Admin Login</h1>
 
 
-<form class="form-signin" method='post' action='validate_admin_login.php'>
+<form class="form-signin" method='post' action='../../login.php'>
 <label for="email" class="sr-only">email</label><br>
 <input type="email" id="email" class="autoinput form-control" placeholder="Email" name='email' required autofocus>
 <label for="inputPassword" class="sr-only">password</label><br>

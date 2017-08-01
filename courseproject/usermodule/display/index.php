@@ -7,11 +7,21 @@ include '../../classes.php';
 
 
 if (isset($_SESSION['login_user'])) {
+	if ($_SESSION['isAdmin'] == true) {
+		//echo "Admin Logged In!";
+		//$_SESSION['isAdmin'] = true;
+		// redirect to admin page
+		header("Location: ../../servermodule/admin");
+	} else {
 	//echo "you are logged in\n<br>";
 	//echo $_SESSION['login_user'];
 
-	$user = new User();
-	$user->getMyRecord($_SESSION['login_user']);
+
+		$user = new User();
+		$user->getMyRecord($_SESSION['login_user']);
+
+	}
+
 
 
 } else {

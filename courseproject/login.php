@@ -46,6 +46,16 @@ if ($userObj->isUser($email) == true) {
 		//$_SESSION['email']=$email;
 		//print_r($_SESSION);
 
+		// check for admin privileges
+		if (($_SESSION['login_user'] == "esphung@gmail.com") == true) {
+			// user is an admin
+			$_SESSION['isAdmin'] = true;
+
+		} else {
+			// user is not admin
+			$_SESSION['isAdmin'] = false;
+		}
+
 		// redirect to profile page
 		header("Location: usermodule/display");
 	} else {
